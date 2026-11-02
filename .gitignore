@@ -1,0 +1,5 @@
+# Installed packages and generated production output stay out of source control.
+node_modules/
+dist/
+# Finder metadata is specific to each developer machine.
+.DS_Store
