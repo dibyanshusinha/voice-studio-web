@@ -1,5 +1,7 @@
 # Voice Studio
 
+**[Open the live demo →](https://dibyanshusinha.github.io/voice-studio-web/)**
+
 React + TypeScript speech workspace with native browser-worker Pocket TTS inference. No second application, iframe, repository download, backend, API key, or paid inference service is required.
 
 ```bash
@@ -68,6 +70,6 @@ Creating a genuinely new speaker from gender/accent descriptions is not currentl
 
 ## GitHub Pages deployment
 
-The repository uses `.github/workflows/deploy-pages.yml` to test, build and publish the static app on pushes to `main`, or manually from the Actions tab. GitHub repository **Settings → Pages → Source** must be **GitHub Actions**. The Pages site URL is `https://dibyanshusinha.github.io/voice-studio-web/` after a successful deployment.
+The repository uses one **Build and deploy** job in `.github/workflows/deploy-pages.yml` to test, build and publish the static app on pushes to `main`, or manually from the Actions tab. GitHub repository **Settings → Pages → Source** must be **GitHub Actions**. The Pages site URL is `https://dibyanshusinha.github.io/voice-studio-web/` after a successful deployment.
 
 Vite emits relative asset URLs so the same build works at a repository subpath or a domain root. The web manifest also uses a relative start URL and scope. `node scripts/check-pages-build.mjs` checks the built entry assets, static inference worker, bundled audio editor, manifest and license links before CI uploads `dist/`. Only the static app is published; model weights still load directly from upstream on demand. GitHub Pages HTTPS supports microphone/AudioWorklet secure contexts; no custom server is required. This deployment does not provide cross-origin-isolation headers, so the existing ONNX runtime normally uses its single-thread path.
