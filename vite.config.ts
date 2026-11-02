@@ -6,5 +6,6 @@ export default defineConfig({
   server: {
     port: 5173
   },
-  base: '/'
+  // Relative URLs allow the same build to work at / and GitHub Pages repository paths.
+  base: './'
 });
